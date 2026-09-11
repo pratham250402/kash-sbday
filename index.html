@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy Birthday, Kashuu 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8F1;
+    --paper:#FFFDFA;
+    --blush:#F3AEC0;
+    --rose:#D96A88;
+    --deep-rose:#B84D6C;
+    --sage:#93AD93;
+    --sage-dark:#6E8A6E;
+    --gold:#D9A857;
+    --plum:#4A3542;
+    --plum-soft:#7A6570;
+    --shadow: 0 10px 30px rgba(74,53,66,0.12);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Quicksand', sans-serif;
+    overflow-x:hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  .sr-only{position:absolute; width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+
+  /* ---------- Shared section styling ---------- */
+  section{
+    position:relative;
+    padding: 5rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .eyebrow{
+    font-size: 0.9rem;
+    color: var(--sage-dark);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--deep-rose);
+    margin: 0 0 0.6rem 0;
+  }
+
+  p{
+    line-height: 1.7;
+    color: var(--plum-soft);
+    font-size: 1.05rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height: 100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    padding: 2rem 1.25rem;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(243,174,192,0.35), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(147,173,147,0.25), transparent 50%),
+      var(--cream);
+  }
+
+  .hero-petals{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+
+  .petal, .heart-float{
+    position:absolute;
+    top:-10%;
+    font-size: 1.4rem;
+    opacity:0.85;
+    animation: drift linear infinite;
+    will-change: transform;
+    user-select:none;
+  }
+
+  @keyframes drift{
+    0%{ transform: translateY(-10vh) translateX(0) rotate(0deg); opacity:0; }
+    10%{ opacity:0.9; }
+    90%{ opacity:0.8; }
+    100%{ transform: translateY(110vh) translateX(var(--drift, 40px)) rotate(360deg); opacity:0; }
+  }
+
+  .hero-badge{
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    color: var(--rose);
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(217,106,136,0.25);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.6rem;
+    animation: fadeDown 1s ease both;
+  }
+
+  .hero h1{
+    font-size: clamp(3rem, 15vw, 5.2rem);
+    line-height: 1;
+    margin: 0;
+    animation: fadeUp 1.1s ease 0.15s both;
+  }
+
+  .hero .script{
+    font-style: italic;
+    font-weight: 500;
+    display:block;
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    color: var(--plum);
+    margin-top: 0.6rem;
+    animation: fadeUp 1.1s ease 0.35s both;
+  }
+
+  .hero .sub{
+    max-width: 420px;
+    margin-top: 1.6rem;
+    animation: fadeUp 1.1s ease 0.55s both;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0; transform: translateY(18px);}
+    to{opacity:1; transform: translateY(0);}
+  }
+  @keyframes fadeDown{
+    from{opacity:0; transform: translateY(-10px);}
+    to{opacity:1; transform: translateY(0);}
+  }
+
+  .scroll-cue{
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: var(--sage-dark);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.4rem;
+    animation: fadeUp 1.1s ease 0.8s both;
+  }
+  .scroll-cue span{
+    width:1px; height:26px;
+    background: var(--sage-dark);
+    animation: bob 1.8s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{ transform: translateY(0); opacity:0.4;}
+    50%{ transform: translateY(6px); opacity:1;}
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline-intro{ text-align:center; margin-bottom: 3rem; }
+  .timeline-intro p{ max-width: 440px; margin: 0 auto; }
+
+  .timeline{
+    position:relative;
+    padding-left: 1.75rem;
+    border-left: 2px solid rgba(147,173,147,0.4);
+  }
+
+  .t-item{
+    position:relative;
+    padding: 0 0 2.6rem 1.25rem;
+    opacity:0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .t-item.in{ opacity:1; transform: translateY(0); }
+  .t-item:last-child{ padding-bottom: 0; }
+
+  .t-item::before{
+    content: attr(data-year);
+    position:absolute;
+    left: -2.55rem;
+    top: 0;
+    width: 2.1rem; height: 2.1rem;
+    background: var(--paper);
+    border: 2px solid var(--rose);
+    color: var(--deep-rose);
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 0.85rem;
+  }
+
+  .t-item h3{ font-size: 1.4rem; margin-bottom:0.25rem; }
+  .t-item p{ font-size: 0.98rem; margin:0; }
+
+  /* ---------- ENVELOPE / LETTER ---------- */
+  .letter-wrap{
+    text-align:center;
+  }
+  .letter-wrap .eyebrow, .letter-wrap h2, .letter-wrap > p{
+    text-align:center;
+  }
+
+  .envelope-stage{
+    margin: 2.5rem auto 0;
+    width: 100%;
+    max-width: 340px;
+    perspective: 1200px;
+  }
+
+  .envelope{
+    position:relative;
+    width:100%;
+    aspect-ratio: 3/2;
+    cursor:pointer;
+    border-radius: 10px;
+    background: linear-gradient(155deg, #fdeef1, #f9dbe2);
+    box-shadow: var(--shadow);
+  }
+
+  .env-back{
+    position:absolute; inset:0;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .env-back::before, .env-back::after{
+    content:"";
+    position:absolute;
+    width:0; height:0;
+  }
+
+  .env-flap{
+    position:absolute;
+    top:0; left:0; right:0;
+    height: 55%;
+    background: linear-gradient(155deg, #f6c9d3, #f0b3c1);
+    clip-path: polygon(0 0, 100% 0, 50% 85%);
+    transform-origin: top center;
+    transition: transform 0.7s cubic-bezier(.6,-0.1,.3,1.3);
+    z-index:3;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .env-pocket{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:65%;
+    background: linear-gradient(160deg, #f6c3ce, #f0aec0);
+    clip-path: polygon(0 100%, 0 20%, 50% 65%, 100% 20%, 100% 100%);
+    z-index:2;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .env-seal{
+    position:absolute;
+    top: 42%; left:50%;
+    transform: translate(-50%,-50%);
+    width: 46px; height:46px;
+    background: var(--rose);
+    color: #fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 1.3rem;
+    z-index:4;
+    box-shadow: 0 4px 10px rgba(217,106,136,0.4);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .envelope.open .env-flap{ transform: rotateX(180deg); }
+  .envelope.open .env-seal{ opacity:0; transform: translate(-50%,-50%) scale(0.5); }
+
+  .letter-paper{
+    position:absolute;
+    left:6%; right:6%;
+    bottom: 6%;
+    top: 30%;
+    background: var(--paper);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(74,53,66,0.18);
+    z-index:1;
+    transform: translateY(6%);
+    transition: transform 0.7s ease 0.15s, top 0.7s ease 0.15s;
+    display:flex; align-items:center; justify-content:center;
+    padding: 0.6rem;
+  }
+  .letter-paper span{
+    font-family:'Cormorant Garamond', serif;
+    color: var(--plum-soft);
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+  }
+
+  .envelope.open .letter-paper{ top: -18%; transform: translateY(0); }
+
+  .tap-hint{
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--sage-dark);
+  }
+
+  .letter-content{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height 0.9s ease;
+    text-align:left;
+    background: var(--paper);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+  }
+  .letter-content.show{ max-height: 900px; margin-top: 2rem; }
+  .letter-inner{ padding: 2rem 1.75rem; }
+  .letter-inner p{ font-size: 1rem; margin: 0 0 1rem 0; }
+  .letter-inner p:last-child{ margin-bottom:0; }
+  .letter-sign{
+    font-family:'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--deep-rose);
+    margin-top: 1.2rem;
+  }
+
+  /* ---------- BEST OF US ---------- */
+  .polaroid-wrap{ display:flex; justify-content:center; margin-top:2.2rem; }
+  .polaroid{
+    background: var(--paper);
+    padding: 0.9rem 0.9rem 2.4rem;
+    box-shadow: var(--shadow);
+    width: min(320px, 100%);
+    transform: rotate(-2.5deg);
+    border-radius: 3px;
+  }
+  .polaroid-photo{
+    width:100%;
+    aspect-ratio: 1/1;
+    border-radius:2px;
+    background:
+      linear-gradient(155deg, rgba(243,174,192,0.55), rgba(147,173,147,0.4)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.15) 0 12px, transparent 12px 24px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:0.4rem;
+    color: #fff;
+    text-align:center;
+    padding: 1rem;
+    overflow:hidden;
+    position:relative;
+  }
+  .polaroid-photo img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    display:none;
+  }
+  .polaroid-photo .ph-icon{ font-size:2.2rem; }
+  .polaroid-photo .ph-text{ font-size:0.85rem; opacity:0.95; max-width:200px; }
+  .polaroid-caption{
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color: var(--plum-soft);
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  /* ---------- SURPRISE BUTTON ---------- */
+  .surprise-section{ text-align:center; }
+  .surprise-btn{
+    font-family:'Quicksand', sans-serif;
+    font-weight:600;
+    font-size: 1.05rem;
+    color:#fff;
+    background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+    border:none;
+    padding: 1rem 2.2rem;
+    border-radius: 999px;
+    cursor:pointer;
+    box-shadow: 0 10px 24px rgba(184,77,108,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    margin-top: 1.5rem;
+  }
+  .surprise-btn:active{ transform: scale(0.96); }
+  .surprise-btn:focus-visible{ outline: 3px solid var(--gold); outline-offset:3px; }
+
+  .surprise-message{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height 0.8s ease;
+  }
+  .surprise-message.show{ max-height:300px; margin-top:1.8rem; }
+  .surprise-message p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size: 1.35rem;
+    color: var(--deep-rose);
+    line-height:1.5;
+  }
+
+  .burst-layer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index: 999;
+    overflow:hidden;
+  }
+  .burst-piece{
+    position:absolute;
+    font-size: 1.3rem;
+    top:-5%;
+    animation: fall linear forwards;
+  }
+  @keyframes fall{
+    0%{ transform: translateY(0) translateX(0) rotate(0deg); opacity:1; }
+    100%{ transform: translateY(105vh) translateX(var(--fx,0px)) rotate(var(--fr,300deg)); opacity:0.9; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding: 4rem 1.5rem 5rem;
+  }
+  footer .heart-row{ font-size:1.4rem; margin-bottom:1rem; letter-spacing:0.3rem; color: var(--rose); }
+  footer h2{ font-size: 2rem; }
+  footer .sign{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color: var(--plum-soft);
+    margin-top:0.5rem;
+  }
+
+  @media (min-width:600px){
+    section{ padding: 6.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-label="Birthday greeting">
+  <div class="hero-petals" id="heroPetals" aria-hidden="true"></div>
+  <div class="hero-badge">a little something for you</div>
+  <h1>Happy Birthday<span class="script">Kashuu 🌸</span></h1>
+  <p class="sub">Eight years of friendship, and somehow you still surprise me with how good it feels to have you around. This one's for you, Kash.</p>
+  <div class="scroll-cue" aria-hidden="true"><span></span>scroll down</div>
+</section>
+
+<!-- ================= 8 YEARS TIMELINE ================= -->
+<section aria-label="Eight years of friendship">
+  <div class="timeline-intro">
+    <p class="eyebrow">a small look back</p>
+    <h2>Eight years of us</h2>
+    <p>From strangers to the kind of friends who don't need a reason to check in — here's to every year that got us here.</p>
+  </div>
+
+  <div class="timeline" id="timeline">
+    <div class="t-item" data-year="1"><h3>Where it began</h3><p>The year we met and somehow just clicked — like we'd known each other longer than we had.</p></div>
+    <div class="t-item" data-year="2"><h3>Getting comfortable</h3><p>Inside jokes started forming, and I stopped thinking twice before texting you the smallest things.</p></div>
+    <div class="t-item" data-year="3"><h3>Through the ups</h3><p>Celebrating each other's wins like they were our own — because honestly, they kind of were.</p></div>
+    <div class="t-item" data-year="4"><h3>Through the downs</h3><p>The year I learned you're the person I call first when things fall apart, no explanations needed.</p></div>
+    <div class="t-item" data-year="5"><h3>Growing up, together</h3><p>Life got busier, things changed around us — but calling you still felt exactly the same.</p></div>
+    <div class="t-item" data-year="6"><h3>Still showing up</h3><p>Distance, time, chaos — none of it ever really got in the way of us.</p></div>
+    <div class="t-item" data-year="7"><h3>Knowing each other, fully</h3><p>By now you know my worst days and my best ones just as well, and you stayed for both.</p></div>
+    <div class="t-item" data-year="8"><h3>Right now</h3><p>Eight years in, and you're still the first "good news" text and the last "bad day" call. Here's to more.</p></div>
+  </div>
+</section>
+
+<!-- ================= ENVELOPE / LETTER ================= -->
+<section class="letter-wrap" aria-label="A letter for Kash">
+  <p class="eyebrow">tap to open</p>
+  <h2>A little letter, just for you</h2>
+  <p>Some things are easier to say in writing.</p>
+
+  <div class="envelope-stage">
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Open the letter">
+      <div class="env-pocket"></div>
+      <div class="letter-paper"><span>for Kash 🤍</span></div>
+      <div class="env-flap"></div>
+      <div class="env-seal">💌</div>
+    </div>
+  </div>
+  <p class="tap-hint" id="tapHint">tap the envelope</p>
+
+  <div class="letter-content" id="letterContent">
+    <div class="letter-inner">
+      <p>Kashuu,</p>
+      <p>Eight years is a long time to keep choosing the same friendship, and I don't take that lightly. Out of everyone who's come and gone, you're the one who stayed — through the random 2am conversations, the silly fights that never lasted, and the years we somehow made it through side by side.</p>
+      <p>You've seen me at my most ridiculous and my most honest, and you never once made me feel like I had to be anything other than myself around you. That's rare, and I hope you know how much it means.</p>
+      <p>So here's to you, Kash — on your birthday and every ordinary day in between. Not beyond best friend, just exactly the right amount of everything.</p>
+      <p class="letter-sign">— Pratham</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEST OF US ================= -->
+<section aria-label="Our favorite photo">
+  <div class="timeline-intro">
+    <p class="eyebrow">a favorite memory</p>
+    <h2>Best of us</h2>
+    <p>This is the one I keep coming back to.</p>
+  </div>
+  <div class="polaroid-wrap">
+    <div class="polaroid">
+      <div class="polaroid-photo">
+        <!-- To use your own photo: replace the src below and remove style="display:none" -->
+        <img id="bestPhoto" src="best-of-us.jpg" alt="Pratham and Kash together" style="display:none;">
+        <span class="ph-icon">📷</span>
+        <span class="ph-text">drop your favorite photo of you two here — see the note below the page</span>
+      </div>
+      <p class="polaroid-caption">us, doing what we do best</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SURPRISE ================= -->
+<section class="surprise-section" aria-label="Surprise">
+  <p class="eyebrow">one more thing</p>
+  <h2>Made it this far?</h2>
+  <p>There's one last surprise waiting for you.</p>
+  <button class="surprise-btn" id="surpriseBtn">Tap for a surprise 🎁</button>
+  <div class="surprise-message" id="surpriseMessage">
+    <p>Happy Birthday, Kashuu. Here's to year nine, and every one after that. 🌸🤍</p>
+  </div>
+</section>
+
+<footer>
+  <div class="heart-row" aria-hidden="true">♥ 🌸 ♥</div>
+  <h2>Happy Birthday, Kash</h2>
+  <p class="sign">with so much love — Pratham</p>
+</footer>
+
+<div class="burst-layer" id="burstLayer" aria-hidden="true"></div>
+
+<script>
+  // ---- Hero floating petals & hearts ----
+  (function(){
+    var container = document.getElementById('heroPetals');
+    var symbols = ['🌸','🌷','💗','🌺','♥'];
+    var count = window.innerWidth < 480 ? 12 : 18;
+    for(var i=0;i<count;i++){
+      var el = document.createElement('span');
+      el.className = 'petal';
+      el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+      var left = Math.random()*100;
+      var duration = 9 + Math.random()*8;
+      var delay = Math.random()*10;
+      var drift = (Math.random()*80 - 40) + 'px';
+      var size = 0.9 + Math.random()*0.9;
+      el.style.left = left + '%';
+      el.style.animationDuration = duration + 's';
+      el.style.animationDelay = delay + 's';
+      el.style.setProperty('--drift', drift);
+      el.style.fontSize = size + 'rem';
+      container.appendChild(el);
+    }
+  })();
+
+  // ---- Timeline reveal on scroll ----
+  (function(){
+    var items = document.querySelectorAll('.t-item');
+    if('IntersectionObserver' in window){
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.25});
+      items.forEach(function(item){ obs.observe(item); });
+    } else {
+      items.forEach(function(item){ item.classList.add('in'); });
+    }
+  })();
+
+  // ---- Envelope open ----
+  (function(){
+    var envelope = document.getElementById('envelope');
+    var letterContent = document.getElementById('letterContent');
+    var tapHint = document.getElementById('tapHint');
+    var opened = false;
+
+    function toggle(){
+      opened = !opened;
+      envelope.classList.toggle('open', opened);
+      envelope.setAttribute('aria-expanded', opened);
+      if(opened){
+        setTimeout(function(){ letterContent.classList.add('show'); }, 500);
+        tapHint.textContent = 'tap again to close';
+      } else {
+        letterContent.classList.remove('show');
+        tapHint.textContent = 'tap the envelope';
+      }
+    }
+
+    envelope.addEventListener('click', toggle);
+    envelope.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  })();
+
+  // ---- Surprise burst ----
+  (function(){
+    var btn = document.getElementById('surpriseBtn');
+    var message = document.getElementById('surpriseMessage');
+    var burstLayer = document.getElementById('burstLayer');
+    var symbols = ['🌸','💗','🌷','♥','✨','🌺'];
+    var fired = false;
+
+    btn.addEventListener('click', function(){
+      message.classList.add('show');
+      spawnBurst();
+      if(!fired){
+        fired = true;
+        btn.textContent = 'Happy Birthday! 🌸';
+      }
+    });
+
+    function spawnBurst(){
+      var count = window.innerWidth < 480 ? 26 : 40;
+      for(var i=0;i<count;i++){
+        var piece = document.createElement('span');
+        piece.className = 'burst-piece';
+        piece.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+        var left = Math.random()*100;
+        var duration = 2.6 + Math.random()*2;
+        var fx = (Math.random()*160 - 80) + 'px';
+        var fr = (Math.random()*360 + 200) + 'deg';
+        var size = 1 + Math.random()*1;
+        piece.style.left = left + '%';
+        piece.style.animationDuration = duration + 's';
+        piece.style.setProperty('--fx', fx);
+        piece.style.setProperty('--fr', fr);
+        piece.style.fontSize = size + 'rem';
+        burstLayer.appendChild(piece);
+        (function(p, d){
+          setTimeout(function(){ p.remove(); }, d*1000 + 100);
+        })(piece, duration);
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>
